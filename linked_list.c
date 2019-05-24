@@ -36,23 +36,30 @@ insert(list *lp, char node_item)
 /* show the elements inside the list */
 int
 walk(list lp)
-{  
-  /* check if the current node is equal to null */
+{
+  int size = 0;
+
   if(lp == NULL)
   {
     printf("empty list\n");
-    return 0;
+    return 1;
   }
-
-  struct no *cNode = lp; // current node.
-
-  /* continue the loop while the current
-  node is diffent from null */
-  while(cNode != NULL)
+  while(lp != NULL)
   {
-    printf("node: %c\n", cNode->item); // print the node item.
-    cNode = cNode->prox; // assigns the next node to the current node.
-  } return 0;
+    size++;
+    printf("node: %c\n", lp->item);
+    lp = lp->prox;
+  } return size;
+}
+
+char
+accessNode(list lp, int i)
+{
+  while((i--) > 1 && lp != NULL)
+  {
+    printf("node: %c\n", lp->item);
+    lp = lp->prox;
+  } return lp->item;
 }
 
 /* destroy the list */
@@ -88,8 +95,5 @@ main(int argc, char *argv[])
 
   for(int i=65; i <= 90; i++)
     insert(&L, (char)i); // inserts the alphabet into the linked list ().
-
-  walk(L); // walk the list
-  destroy(&L); // destroy the list
   return 0;
 }
