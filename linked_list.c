@@ -17,7 +17,7 @@ insert(list *lp, char node_item)
   *lp = new_node; // ;
 }
 
-/* percorrer os elementos da minha lista */
+/* show the elements inside the list */
 int
 walk(struct no lp)
 {  
@@ -29,7 +29,7 @@ walk(struct no lp)
     return 0;
   }
 
-  struct no *cNode = &lp; // node atual
+  struct no *cNode = &lp; // current node
   
   while(cNode->prox != NULL)
   {
@@ -38,7 +38,7 @@ walk(struct no lp)
   } return 0;
 }
 
-/* destroi a lista */
+/* destroy the list */
 void
 destroy(list *lp)
 {
@@ -54,7 +54,7 @@ destroy(list *lp)
 int
 main(int argc, char *argv[])
 {
-  list L = NULL; // primeiro elemento armazena o valor NULL
+  list L = NULL; // store in the first element a NULL
 
   for(int i=64; i <= 90; i++)
     insert(&L, (char)i);
