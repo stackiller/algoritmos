@@ -1,6 +1,6 @@
 # Alg0rithms 
 
-Alg0rithms is a Colection of Algorithms in C / C++, will be increased at the time.
+Algorithms is a collection of algorithms in C / C ++, which will be incremented over time.
 
 ![](arth.jpg)
 
