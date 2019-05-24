@@ -19,22 +19,20 @@ insert(list *lp, char node_item)
 
 /* show the elements inside the list */
 int
-walk(struct no lp)
+walk(list lp)
 {  
-
-  if(lp.prox == NULL)
+  if(lp == NULL)
   {
-    printf("last item: %c\n", lp.item);
-    printf("lista vazia\n");
+    printf("empty list\n");
     return 0;
   }
 
-  struct no *cNode = &lp; // current node
-  
-  while(cNode->prox != NULL)
+  struct no *cNode = lp; // current node
+
+  while(cNode != NULL)
   {
     printf("node: %c\n", cNode->item);
-    *cNode = *(cNode->prox);
+    cNode = cNode->prox;
   } return 0;
 }
 
@@ -42,34 +40,33 @@ walk(struct no lp)
 int
 destroy(list *lp)
 {
-  printf("list address pointer: %p\n", *lp);
+  printf("list pointer address: %p\n", *lp);
   struct no *current_node = *lp;
-  if(current_node->prox == NULL)
+  if(current_node == NULL)
   {
     printf("empty list\n");
     return 0;
   }
-  while(current_node->prox != NULL)
+  while(current_node != NULL)
   {
-    printf("node address pointer: %p\n", current_node);
+    printf("node pointer address: %p\n", current_node);
     *lp = current_node->prox;
     free(current_node);
     current_node = *lp;
-  } printf("last node address pointer: %p\n", current_node);
-  printf("list address pointer: %p\n", *lp);
+  } printf("last pointer address: %p\n", current_node);
+  printf("list pointer address: %p\n", *lp);
   return 0;
 }
 
 int
 main(int argc, char *argv[])
 {
-  list L = NULL; // store in the first element a NULL
+  list L = NULL;
 
-  for(int i=64; i <= 90; i++)
+  for(int i=65; i <= 90; i++)
     insert(&L, (char)i);
 
-  walk(*L);
-  destroy(&L);
+  walk(L);
   destroy(&L);
   return 0;
 }
