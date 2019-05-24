@@ -39,16 +39,25 @@ walk(struct no lp)
 }
 
 /* destroy the list */
-void
+int
 destroy(list *lp)
 {
+  printf("list address pointer: %p\n", *lp);
   struct no *current_node = *lp;
+  if(current_node->prox == NULL)
+  {
+    printf("empty list\n");
+    return 0;
+  }
   while(current_node->prox != NULL)
   {
-    free(*lp);
+    printf("node address pointer: %p\n", current_node);
     *lp = current_node->prox;
+    free(current_node);
     current_node = *lp;
-  }
+  } printf("last node address pointer: %p\n", current_node);
+  printf("list address pointer: %p\n", *lp);
+  return 0;
 }
 
 int
@@ -60,5 +69,7 @@ main(int argc, char *argv[])
     insert(&L, (char)i);
 
   walk(*L);
+  destroy(&L);
+  destroy(&L);
   return 0;
 }
