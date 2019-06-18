@@ -25,8 +25,7 @@ typedef struct no {
 
 /* insert node at the top of the list */
 void
-insert(list *lp, char node_item)
-{
+insert(list *lp, char node_item) {
   struct no *new_node = (struct no*) malloc(sizeof(struct no)); // allocates a new node.
   new_node->item = node_item; // assigns value to new node.
   new_node->prox = *lp; // saves the contents of the previous node into the current node.
@@ -35,17 +34,14 @@ insert(list *lp, char node_item)
 
 /* show the elements inside the list */
 list
-walk(list lp)
-{
+walk(list lp) {
   int size = 0;
 
-  if(lp == NULL)
-  {
+  if(lp == NULL) {
     printf("empty list\n");
     return NULL;
   }
-  while(lp != NULL)
-  {
+  while(lp != NULL) {
     size++;
     printf("node: %c\n", lp->item);
     lp = lp->prox;
@@ -53,10 +49,8 @@ walk(list lp)
 }
 
 char
-accessNode(list lp, int i)
-{
-  while((i--) > 1 && lp != NULL)
-  {
+accessNode(list lp, int i) {
+  while((i--) > 1 && lp != NULL) {
     printf("node: %c\n", lp->item);
     lp = lp->prox;
   } return lp->item;
@@ -64,21 +58,18 @@ accessNode(list lp, int i)
 
 /* destroy the list */
 int
-destroy(list *lp)
-{
+destroy(list *lp) {
   printf("list pointer address: %p\n", *lp); // print the current index pointer.
   struct no *current_node = *lp; // assign the contents of the start of the list to the current node.
   
   /* check if the current node is equal to null */
-  if(current_node == NULL)
-  {
+  if(current_node == NULL) {
     printf("empty list\n");
     return 0;
   }
 
   /* continue the loop while the current node is different from null */
-  while(current_node != NULL)
-  {
+  while(current_node != NULL) {
     printf("node pointer address: %p\n", current_node); // print the current index pointer.
     *lp = current_node->prox; // defines the contents of the initial index pointer of the list with the netx node.
     free(current_node); // release the current node.
@@ -89,16 +80,12 @@ destroy(list *lp)
 }
 
 int
-main(int argc, char *argv[])
-{
+main(int argc, char *argv[]) {
   list x = NULL;
   list y = NULL;
 
-  for(int i=65; i <= 90; i++)
-  {
+  for(int i=65; i <= 90; i++) {
     insert(&x, (char)i); // inserts the alphabet into the linked list ().
-    insert(&y, (char)i); // inserts the alphabet into the linked list ().
-  }
-  walk(x);
+  } walk(x);
   return 0;
 }
