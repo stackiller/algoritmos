@@ -13,7 +13,7 @@ not necessary to make the declaration of a predefined size, even in the case of 
 Using linked lists besides offering more flexibility helps a lot when working with asynchronous
 data that need to be arranged in a sequential xD list.
 
-Author: aSynKronus
+Author: stackiller
 
 */
 
