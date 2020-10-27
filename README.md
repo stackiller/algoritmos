@@ -1,4 +1,7 @@
-# Alg0rithms 
+# Algoritmos 
 
-Algorithms is a collection of algorithms in C / C ++, which will be incremented over time.
+Através deste repositório, irei agregando alguns algoritmos interessantes e úteis, de preferência em C ou C++ ( quando aprender ).
 
+Por enquanto os algoritmos disponíveis são:
+
+ - [x] Lista Encadeada.
