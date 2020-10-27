@@ -4,4 +4,4 @@ Através deste repositório, irei agregando alguns algoritmos interessantes e ú
 
 Por enquanto os algoritmos disponíveis são:
 
- - [x] Lista Encadeada.
+ - [] Lista Encadeada: imcompleto.
